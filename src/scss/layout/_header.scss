@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    padding-top: 70px; // Отступ, равный высоте заголовка
+    
+}
+
+header {
+
+    padding: 40px 40px;
+}
+
+
+.main-menu {
+
+
+    ul {
+        @include Flexmixin (center, center, row, nowrap, 45px);
+        font-family: $font-family-heading;
+        font-size: $default-font-size;
+        font-weight: 600;
+       
+                     
+        li {
+            a {
+                text-decoration: none;
+                color: $text-color;
+                
+
+
+                &:hover {
+                    color: $red;
+                }
+
+            }
+
+
+            &:nth-child(4){
+                position: relative;
+                
+                div{
+                    width: 170px;
+                    background-color: $light;
+                    position: absolute;
+                    top: 50px;
+                    left: -30px;
+                    display: flex;
+                     flex-direction: column;
+                     gap: 1.5rem;
+                     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                     padding: 20px 20px;
+                     border-top: 3px solid $border-top-red;
+                     border-radius: 7px 7px 3px 3px;
+                      transition:all 0.3s ease;
+                      opacity: 0;
+                     
+                     a{
+                        color: $gray-dark;
+                     }
+                   
+                    
+                     &:before {
+                        border-style: solid;
+                        border-width: 0 6px 6px 6px;
+                        border-color: transparent transparent red transparent;
+                        content: "";
+                        top: -7px;
+                        left: 13%;
+                        position: absolute;
+                        z-index: -1;
+                        overflow: hidden;
+                        
+                    
+                     }
+                  
+                }
+
+                &:hover{
+                    div{
+                      
+                       opacity: 1;
+                        top: 55px;
+
+                        
+                        
+
+                    }
+                }
+            }
+
+        }
+
+
+        
+    }
+}
+
+
+.header-right {
+    ul {
+        @include Flexmixin (center, center, row, nowrap, 35px);
+
+        li {
+            font-size: 20px;
+            color: $dark;
+
+            i:hover {
+                color: $red;
+            }
+        }
+    }
+}
+
+
+#main {
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    right: 0; 
+    z-index: 1000; 
+    background-color: white; 
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); 
+}
